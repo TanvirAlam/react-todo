@@ -1,0 +1,285 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(246, 246, 246);
+}
+
+/* todolist list base */
+#toDoList {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  margin: 300px auto auto auto;
+  background-color: white;
+  box-shadow: 0 4px 20px 30px rgba(0, 0, 0, 0.137);
+  border-radius: 8px;
+}
+
+::placeholder {
+  font-family: 'inter', sans-serif;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* title base */
+.title {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 23px;
+  padding-left: 10px;
+  height: 50px;
+}
+
+/* h1 text */
+.ttdl {
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  font-style: normal;
+  padding-top: 8px;
+}
+
+/* icon */
+i {
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 8px 10px;
+  border-top: 1px solid #d3d3d3;
+}
+
+.filter-btn {
+  border: 1px solid #d3d3d3;
+  background: #fafafa;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: 'inter', sans-serif;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+.filter-btn.active {
+  background: #e6e6b8;
+  border-color: #c7c77d;
+}
+
+/* task list base */
+#inputList {
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.inputTask {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border-top: 1px solid gray;
+  height: 50px;
+  padding: 0 10px;
+}
+
+/* refresh icon */
+.inputTask i {
+  rotate: 90deg;
+  cursor: pointer;
+}
+
+/* input text  */
+#addList {
+  width: 100%;
+  height: 45px;
+  border: none;
+}
+
+.submiticon {
+  padding: 2px;
+}
+
+.remove-edit {
+  display: flex;
+  gap: 8px;
+  justify-items: flex-end;
+  margin-left: auto;
+  padding-right: 23px;
+  text-decoration: none;
+}
+
+/* Clear task button */
+#btnClear {
+  height: 50px;
+  color: rgb(147, 147, 147);
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  border-top: 1px solid gray;
+  font-size: 18px;
+  font-family: 'inter', sans-serif;
+  cursor: pointer;
+}
+
+/* task list base */
+.list {
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid gray;
+  padding-left: 10px;
+  list-style: none;
+}
+
+/* text */
+.tasks label {
+  font-family: 'inter', sans-serif;
+  padding-left: 10px;
+  width: 100%;
+}
+
+/* text */
+.lists li:nth-child(3) {
+  display: flex;
+  justify-items: flex-end;
+  margin-left: auto;
+  padding-right: 15px;
+  text-decoration: none;
+}
+
+/* text checkbox */
+input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+}
+
+/* text */
+input {
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 100;
+}
+
+/* text */
+input:focus {
+  outline: none;
+}
+
+/* text */
+.text {
+  height: 45px;
+  width: 95%;
+  padding-left: 5px;
+  border: none;
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+}
+
+.textcompleted {
+  text-decoration: line-through;
+  border: none;
+  font-size: 17px;
+  height: 45px;
+  width: 95%;
+  padding-left: 5px;
+  color: #9b9b9b;
+}
+
+/* edit button */
+.edit_list_btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #666;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.edit_list_btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  #toDoList {
+    width: 95%;
+    margin: 40px auto;
+  }
+
+  .title {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .filters {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+  }
+
+  #inputList {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .text, .textcompleted {
+    font-size: 16px;
+  }
+}
+
+/* remove button */
+.remove_btn {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  background: none;
+  color: #ff4444;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.remove_btn:hover {
+  background-color: #ffe6e6;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.to-do {
+  background: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 10px;
+  list-style: none;
+  border-bottom: 0.01px solid #d3d3d3;
+}
